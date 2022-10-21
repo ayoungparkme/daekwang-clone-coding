@@ -2,55 +2,67 @@
 @import "mixins";
 
 #main-visual {
-  overflow: hidden;
-  .list {
-    li {
-      height: 100vh;
-      background-size: cover;
-      background-position: 50%;
-      background-repeat: no-repeat;
+  height: 100vh;
+  li {
+    position: relative;
+    &.visual01 .img {
+      background-image: url("/images/main/visual01.jpg");
     }
-    // for(let i=1; i <= 3;i++){
-
-    // }
-    // scss 에서 문자 보간 #{$변수}
-    @for $i from 1 through 3 {
-      .visual0#{$i} {
-        background-image: url("../images/main/visual0#{$i}.jpg");
+    &.visual02 .img {
+      background-image: url("/images/main/visual02.jpg");
+    }
+    &.swiper-slide-active {
+      .img {
+        transform: scale(0.95);
       }
     }
+    .img {
+      height: 100vh;
+      background-position: 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      transform: scale(1);
+      transition: all 5s ease;
+      transition-delay: 0.5s;
+      overflow: hidden;
+    }
+    .txt {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: $h3;
+      color: #fff;
+      z-index: 1;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      strong {
+        font-weight: 700;
+        font-size: $h1 * 1.25;
+        margin-top: 30px;
+        display: block;
+      }
+    }
+  }
+}
 
-    // .visual01 {
-    //   background-image: url("../images/main/visual01.jpg");
-    // }
-    // .visual02 {
-    //   background-image: url("../images/main/visual02.jpg");
-    // }
-    // .visual03 {
-    //   background-image: url("../images/main/visual03.jpg");
-    // }
+.btns {
+  position: absolute;
+  left: 100px;
+  bottom: -50px;
+  z-index: 2;
+  width: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+.btn {
+  color: $main-color;
+  font-size: $h3;
+  z-index: 2;
+  &-next {
+    right: 50px;
   }
-  .btns {
-    position: absolute;
-    left: 100px;
-    bottom: 50px;
-    z-index: 2;
-    width: 100px;
-    display: flex;
-    justify-content: space-between;
-  }
-  .btn {
-    // position: absolute;
-    // top: 50%;
-    color: #fff;
-    font-size: $h3;
-    z-index: 2;
-    &-next {
-      right: 50px;
-    }
-    &-prev {
-      left: 50px;
-    }
+  &-prev {
+    left: 50px;
   }
 }
 
@@ -83,15 +95,6 @@
             background-image: url("../images/main/quick-icon#{$i}.png");
           }
         }
-        // &:nth-child(1) a:before {
-        //   background-image: url("../images/main/quick-icon1.png");
-        // }
-        // &:nth-child(2) a:before {
-        //   background-image: url("../images/main/quick-icon2.png");
-        // }
-        // &:nth-child(3) a:before {
-        //   background-image: url("../images/main/quick-icon3.png");
-        // }
         a {
           @include flex;
           height: 120px;
