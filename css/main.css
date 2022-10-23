@@ -5,10 +5,10 @@
   position: relative;
 }
 #main-visual li.visual01 .img {
-  background-image: url("/images/main/visual01.jpg");
+  background-image: url("../images/main/visual01.jpg");
 }
 #main-visual li.visual02 .img {
-  background-image: url("/images/main/visual02.jpg");
+  background-image: url("../images/main/visual02.jpg");
 }
 #main-visual li.swiper-slide-active .img {
   transform: scale(0.95);
