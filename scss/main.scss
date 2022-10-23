@@ -6,10 +6,10 @@
   li {
     position: relative;
     &.visual01 .img {
-      background-image: url("/images/main/visual01.jpg");
+      background-image: url("../images/main/visual01.jpg");
     }
     &.visual02 .img {
-      background-image: url("/images/main/visual02.jpg");
+      background-image: url("../images/main/visual02.jpg");
     }
     &.swiper-slide-active {
       .img {
